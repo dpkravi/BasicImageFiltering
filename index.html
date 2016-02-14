@@ -6,6 +6,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <style>
+        body{
+            font-weight: 600;
+        }
         .mainTable{
             text-align: center;
             display: inline-block;
@@ -42,6 +45,19 @@
 
         </table>
 
+        <br>
+        <span class="kerneltablehead">Select Filter</span><br>
+        <select class="form-control filterselect" >
+            <option value="identity">Identity</option>
+            <option value="sharpen">Sharpen</option>
+            <option value="emboss">Emboss</option>
+            <option value="boxblur">Box Blur</option>
+            <option value="gaussian">Gaussian Blur</option>
+            <option value="sobelX">Sobel X</option>
+            <option value="sobelY">Sobel Y</option>
+            <option value="edgeDetect">Edge Detect</option>
+        </select><br><br>
+        or <br>
         <br><span class="kerneltablehead">Custom Kernel</span><br>
         <table class="kerneltable">
             <tr><td><input type="text" class="form-control kernelinput" id="k00" maxlength="2" value="0"></td>
@@ -57,18 +73,7 @@
                 <td><input type="text" class="form-control kernelinput" id="k22" maxlength="2" value="0"></td>
             </tr>
         </table><br>
-        or <br>
-        <span class="kerneltablehead">Select Filter</span><br>
-        <select class="form-control filterselect" >
-            <option value="identity">Identity</option>
-            <option value="sharpen">Sharpen</option>
-            <option value="emboss">Emboss</option>
-            <option value="boxblur">Box Blur</option>
-            <option value="gaussian">Gaussian Blur</option>
-            <option value="sobelX">Sobel X</option>
-            <option value="sobelY">Sobel Y</option>
-            <option value="edgeDetect">Edge Detect</option>
-        </select><br><br>
+        <br>
         <button type="button" class="btn btn-primary" id="applyFilterBtn">Apply Filter</button>
     </div>
 <br>

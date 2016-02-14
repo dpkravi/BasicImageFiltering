@@ -42,7 +42,7 @@
 
         </table>
 
-        <br><span id="kerneltablehead">Kernel</span><br>
+        <br><span class="kerneltablehead">Custom Kernel</span><br>
         <table class="kerneltable">
             <tr><td><input type="text" class="form-control kernelinput" id="k00" maxlength="2" value="0"></td>
                 <td><input type="text" class="form-control kernelinput" id="k01" maxlength="2" value="0"></td>
@@ -58,6 +58,7 @@
             </tr>
         </table><br>
         or <br>
+        <span class="kerneltablehead">Select Filter</span><br>
         <select class="form-control filterselect" >
             <option value="identity">Identity</option>
             <option value="sharpen">Sharpen</option>
@@ -66,6 +67,7 @@
             <option value="gaussian">Gaussian Blur</option>
             <option value="sobelX">Sobel X</option>
             <option value="sobelY">Sobel Y</option>
+            <option value="edgeDetect">Edge Detect</option>
         </select><br><br>
         <button type="button" class="btn btn-primary" id="applyFilterBtn">Apply Filter</button>
     </div>
@@ -103,6 +105,11 @@
     var embossKernel = [ -1,-1, 0,
                          -1, 0, 1,
                           0, 1, 1 ];
+
+    var edgeDetectKernel = [ -1, -1, -1,
+                             -1,  8, -1,
+                             -1, -1, -1];
+
 
 
     $(document).ready(function(){
@@ -172,7 +179,10 @@
         if(selection == "emboss"){
             setKernel(embossKernel);
         }
-
+        if(selection == "edgeDetect"){
+            setKernel(edgeDetectKernel);
+        }
+        edgeDetectKernel
     });
 
     function setKernel(kernel){
